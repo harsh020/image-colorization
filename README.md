@@ -1,9 +1,10 @@
-# Solution
+# Colorizer
 
-The orginial file were completed and can be found:
-- `train.py` -> `colorizer/train.py`
-- `colorize_data.py` -> `colorizer/colorize_data.py`
-- `base_model.py` -> `colorizer/models/models.py`
+A project to bulid and train model to color grayscale images. 
+
+It is a customizable and completetly abstract project capable of running a base model (resnet18). The base model was trained for 100 epochs and the `state_dict` stored in `colorizer/serialized/colornet18_ckpt_pth`.
+
+The componients are implemented using factory design pattern and config.py to provide a layer of abstractness and easy extensibility.
 
 ## How to run
 **Note: Serialized state dict present in `colorizer/serialized/colornet18_ckpt.pth` is a serialized version of the base model trained for 100 epochs. One can directly run inference using the default configs (just use the cli command in inference mode, the result will be saved in `colorized/output/colored.jpg`).**
@@ -73,6 +74,4 @@ The orginial file were completed and can be found:
   - Since, it provides a measure of reconstruction quality, we can also access the structural quality of the predicted image.
 
 
-## Futher thoughs
-Recently, I have been working on the problem of Dehazing images (but have hit certain road blocks due to computational limitations), but I think for both problems (namely Dehazing and Coloring images), GANs seem to be a good option to explore and I believe they can give better results that CNNs.
-I believe so because we were told in a Summer School on CV,(it was something in the lines of..) that if you want better feature representations CNNs are the way to go, but if you want better and pleasing images GANs are the way to go.
+
